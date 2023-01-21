@@ -19,6 +19,9 @@ export type CartItems = {
 
 export type HeaderProps = {
     isLogoOnly: boolean
+    back?: { title: string }
+    navigation: any
+    options: any
 }
 
 export type FeaturedMeals = {

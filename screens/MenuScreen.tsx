@@ -10,7 +10,6 @@ export default function MenuScreen({ navigation }: any) {
 
     return (
         <>
-            <Header isLogoOnly={true} />
             <Hero />
             <Container>
                 <StyledButton buttonTitle='Order' disabled={false} onPress={() => null} buttonColor={Colors.dark} />

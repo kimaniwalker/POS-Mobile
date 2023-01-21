@@ -1,11 +1,10 @@
 import React from 'react'
-import { Image, ScrollView, Text, View } from 'react-native'
+import { Image, ScrollView, View } from 'react-native'
 import styled from 'styled-components/native'
 import { Colors } from '../styles/Colors'
 import { Fonts } from '../styles/Fonts'
 import StyledButton from '../styles/StyledButton'
 import { AvailableSizesInput, MealItem } from '../utils/types'
-import Header from './Header'
 import { useForm, Controller } from "react-hook-form";
 import { useCartContext } from '../context/cart'
 
@@ -18,6 +17,7 @@ export default function Meal({ id, available_sizes, images, name, description, p
     const sizeError: any = errors.size?.message
     const drinkError: any = errors.drink?.message
     const sideError: any = errors.side?.message
+    const specialRequestError: any = errors.special_request?.message
 
     const { addToCart } = useCartContext()
 
@@ -86,7 +86,6 @@ export default function Meal({ id, available_sizes, images, name, description, p
                             <Price>{price}</Price>
                         </Section>
                         <Section>
-                            <Title>Make it a combo</Title>
                             <ItemLabel>Select a size</ItemLabel>
                             {sizeError && <ErrorMessage>{sizeError}</ErrorMessage>}
                             <ScrollView horizontal>
@@ -157,6 +156,7 @@ export default function Meal({ id, available_sizes, images, name, description, p
                             <View>
                                 <Title>Special Request</Title>
                                 <SubHeading>Need to make a special accomodation?</SubHeading>
+                                {specialRequestError && <ErrorMessage>{specialRequestError}</ErrorMessage>}
                                 <Controller
                                     control={control}
                                     defaultValue=''
@@ -170,9 +170,10 @@ export default function Meal({ id, available_sizes, images, name, description, p
                                         }
                                     }}
                                     render={({ field: { onChange, onBlur, value },
-                                        fieldState: { error } }) => (
+                                        fieldState: { error, } }) => (
 
                                         <TextBox
+                                            isDirty={error ? true : false}
                                             multiline
                                             onChangeText={onChange} defaultValue=''
                                             value={value}
@@ -285,7 +286,7 @@ const SubHeading = styled.TextInput`
     font-family: ${Fonts.medium};
     margin: 4px 0;
 `
-const TextBox = styled.TextInput`
+const TextBox = styled.TextInput <{ isDirty: boolean }>`
     min-height: 200px;
     width: 100%;
     border: 2px solid black;
@@ -294,4 +295,5 @@ const TextBox = styled.TextInput`
     vertical-align: top;
     padding: 4px;
     font-family: ${Fonts.medium};
+     border-color: ${props => props.isDirty ? Colors.error : Colors.black};
 `
