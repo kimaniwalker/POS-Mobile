@@ -36,7 +36,8 @@ text-transform: uppercase;
 `
 const Wrapper = styled.View<{ disabled: boolean, buttonColor?: string }>`
 display: flex;
-  width: 325px;
+  max-width: 325px;
+  width: 100%;
   height: 50px;
   opacity: ${(props) => props.disabled ? 0.7 : 1};
   padding: 5px;

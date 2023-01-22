@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { Fonts } from '../styles/Fonts'
-import { Loading } from '../utils/types'
+import { LoadingProps } from '../utils/types'
 
 
-export default function Loading({ message }: Loading) {
+export default function Loading({ message }: LoadingProps) {
 
 
     return (

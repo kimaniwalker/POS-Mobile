@@ -5,13 +5,13 @@ import { Fonts } from '../styles/Fonts'
 import { FeaturedMeals } from '../utils/types'
 import FeaturedItem from './FeaturedItem'
 
-export default function Featured({ featured }: FeaturedMeals) {
+export default function Featured({ title,featured }: FeaturedMeals) {
 
 
 
     return (
         <>
-            <Heading>Featured Menu</Heading>
+            <Heading>{title}</Heading>
             <FlatList numColumns={2} data={featured} renderItem={({ item }) => <FeaturedItem {...item} />} />
 
         </>

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { Colors } from '../styles/Colors'
 import useMenuHook from '../utils/menu'
 import { MealItem } from '../utils/types'
 import Featured from './FeaturedMeals'
@@ -12,6 +11,7 @@ export default function Hero({ }) {
     const { getFullMenu } = useMenuHook()
     const [meals, setMeals] = React.useState<any>([])
     const featuredItems = meals?.filter((item: MealItem) => item.isFeatured == true)
+    const breakfastItems = meals?.filter((item: MealItem) => item.category === 'breakfast')
 
     const getMeals = async () => {
         const meals = await getFullMenu()
@@ -28,7 +28,7 @@ export default function Hero({ }) {
     return (
         <>
             <Wrapper>
-                <Featured featured={featuredItems} />
+                <Featured title='Featured Menu' featured={featuredItems} />
             </Wrapper>
         </>
     )

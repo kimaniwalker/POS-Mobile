@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 import styled from 'styled-components/native'
 import Header from '../components/Header'
@@ -12,8 +11,11 @@ export default function MenuScreen({ navigation }: any) {
         <>
             <Hero />
             <Container>
+                <Row>
+
                 <StyledButton buttonTitle='Order' disabled={false} onPress={() => navigation.navigate('Cart')} buttonColor={Colors.dark} />
-                <StatusBar style="auto" />
+            
+                </Row>
             </Container>
         </>
     )
@@ -24,4 +26,11 @@ const Container = styled.View`
     background-color: '#fff';
     align-items: center;
     justify-content: center;
+`
+const Row = styled.View`
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 16px;
 `

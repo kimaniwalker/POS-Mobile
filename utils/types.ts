@@ -25,6 +25,7 @@ export type HeaderProps = {
 }
 
 export type FeaturedMeals = {
+    title: string
     featured?: MealItem[]
 }
 
@@ -56,7 +57,7 @@ type Side = {
     available_sides: string[]
 }
 
-export type Loading = {
+export type LoadingProps = {
     isLoading: boolean
     message: string
 }
@@ -74,8 +75,22 @@ export type PayParams = {
     customer?: string,
     description: string,
     metadata: any,
-    receipt_email: string,
-    statement_descriptor: string
+    receipt_email?: string,
+    statement_descriptor?: string
     application_fee_amount?: string | number,
     stripeAccount?: string,
+}
+
+export type CartThumbnailProps = {
+    id: number | string
+    name: string
+    price: number
+    qty: number
+    specialMessage?: string,
+    image: string
+}
+
+export type ItemsInCartProps = {
+    loading: boolean
+    pay: () => void
 }

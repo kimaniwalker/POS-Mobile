@@ -39,8 +39,10 @@ export default function Header({ isLogoOnly, navigation, options, back }: Header
 
 
                         {!isLogoOnly && (
-                            <MaterialCommunityIcons
-                                style={{ position: 'relative' }} name="cart-outline" size={30} color="white" />
+                            <CartWrapper onPress={() => navigation.navigate('Cart')}>
+                                <MaterialCommunityIcons
+                                    style={{ position: 'relative' }} name="cart-outline" size={30} color="white" />
+                            </CartWrapper>
                         )}
                         {!isLogoOnly && cartTotal >= 1 && (
                             <CountWrapper>
@@ -95,4 +97,7 @@ min-width: 30px;
 min-height: 30px;
 right: 5px;
 top: 10px;
+`
+const CartWrapper = styled.Pressable`
+    position: relative;
 `

@@ -61,7 +61,7 @@ export default function Meal({ id, available_sizes, images, name, description, p
             name: name,
             price: price,
             qty: 1,
-            specialMessage: control._formValues.special_request,
+            specialMessage: control._formValues.special_request || description,
             combo: {
                 drink: control._formValues.drink,
                 side: control._formValues.side,
