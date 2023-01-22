@@ -47,6 +47,7 @@ export default function Header({ isLogoOnly, navigation, options, back }: Header
                                 <Count>{cartTotal}</Count>
                             </CountWrapper>
                         )}
+                        
 
                     </Wrapper>
                 </SafeAreaView>

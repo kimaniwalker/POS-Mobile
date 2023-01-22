@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MenuScreen from '../screens/MenuScreen';
 import MealScreen from '../screens/MealScreen';
 import Header from '../components/Header';
+import CartScreen from '../screens/CartScreen';
 
 
 export default function Navigator() {
@@ -18,6 +19,7 @@ export default function Navigator() {
             >
                 <Stack.Screen name="Featured" component={MenuScreen} />
                 <Stack.Screen name="Meal" component={MealScreen} />
+                <Stack.Screen name="Cart" component={CartScreen} />
 
             </Stack.Navigator>
         </>

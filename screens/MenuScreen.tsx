@@ -12,7 +12,7 @@ export default function MenuScreen({ navigation }: any) {
         <>
             <Hero />
             <Container>
-                <StyledButton buttonTitle='Order' disabled={false} onPress={() => null} buttonColor={Colors.dark} />
+                <StyledButton buttonTitle='Order' disabled={false} onPress={() => navigation.navigate('Cart')} buttonColor={Colors.dark} />
                 <StatusBar style="auto" />
             </Container>
         </>

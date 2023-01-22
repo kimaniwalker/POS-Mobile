@@ -7,6 +7,7 @@ import {
   Lora_400Regular_Italic,
   Lora_700Bold_Italic
 } from '@expo-google-fonts/lora';
+import { StripeProvider } from '@stripe/stripe-react-native';
 
 import { CartWrapper } from './context/cart';
 
@@ -28,11 +29,17 @@ export default function App() {
   return (
     <>
       <StatusBar style='light' />
-      <CartWrapper>
-        <NavigationContainer>
-          <Navigator />
-        </NavigationContainer>
-      </CartWrapper>
+      <StripeProvider
+        publishableKey="pk_test_E1w7nEQKNaAPqAdDPdgFogN000yif31NpU"
+        urlScheme="your-url-scheme" // required for 3D Secure and bank redirects
+        merchantIdentifier="merchant.key2design.posMobile" // required for Apple Pay
+      >
+        <CartWrapper>
+          <NavigationContainer>
+            <Navigator />
+          </NavigationContainer>
+        </CartWrapper>
+      </StripeProvider>
     </>
   );
 }

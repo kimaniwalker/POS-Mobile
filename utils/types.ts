@@ -66,3 +66,16 @@ export type AvailableSizesInput = {
     setValue: (fieldName: string, newValue: string, config?: {}) => void
     errorMsg?: string
 }
+
+export type PayParams = {
+    amount: number,
+    currency?: string,
+    payment_method_types?: string[],
+    customer?: string,
+    description: string,
+    metadata: any,
+    receipt_email: string,
+    statement_descriptor: string
+    application_fee_amount?: string | number,
+    stripeAccount?: string,
+}
