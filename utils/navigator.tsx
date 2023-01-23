@@ -14,7 +14,7 @@ export default function Navigator() {
         <>
             <Stack.Navigator
                 screenOptions={{
-                    header: ({ back, navigation, options }) => <Header back={back} navigation={navigation} options={options} isLogoOnly={false} />
+                    header: ({ back, navigation, options, route }) => <Header route={route} back={back} navigation={navigation} options={options} isLogoOnly={false} />
                 }}
             >
                 <Stack.Screen name="Featured" component={MenuScreen} />

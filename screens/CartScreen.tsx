@@ -97,12 +97,8 @@ export default function CartScreen() {
 
   const Wrapper = styled.View`
     flex: 1;
-    justify-content: center;
+  justify-content: center;
     display: flex;
     padding: 16px;
     align-items: center;
-  `
-  const Title = styled.Text`
-    font-size: 32px;
-    font-family: ${Fonts.italicBold};
   `

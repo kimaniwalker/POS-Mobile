@@ -7,7 +7,7 @@ import { HeaderProps } from '../utils/types';
 import { useCartContext } from '../context/cart';
 import { Fonts } from '../styles/Fonts';
 
-export default function Header({ isLogoOnly, navigation, options, back }: HeaderProps) {
+export default function Header({ isLogoOnly, navigation, options, back, route }: HeaderProps) {
 
     const canGoBack = navigation.canGoBack()
     const [cartTotal, setcartTotal] = React.useState(0)
@@ -37,6 +37,9 @@ export default function Header({ isLogoOnly, navigation, options, back }: Header
                             <MaterialCommunityIcons name="backburger" size={42} color="white" />
                         </BackButton>}
 
+                        {route.name === 'Cart' && (
+                            <Title>Cart Items</Title>
+                        )}
 
                         {!isLogoOnly && (
                             <CartWrapper onPress={() => navigation.navigate('Cart')}>
@@ -100,4 +103,9 @@ top: 10px;
 `
 const CartWrapper = styled.Pressable`
     position: relative;
+`
+const Title = styled.Text`
+    font-size: 24px;
+    font-family: ${Fonts.italicBold};
+    color: #fff;
 `

@@ -22,6 +22,7 @@ export type HeaderProps = {
     back?: { title: string }
     navigation: any
     options: any
+    route: any
 }
 
 export type FeaturedMeals = {

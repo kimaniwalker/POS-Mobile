@@ -9,9 +9,7 @@ import {
   Lora_700Bold_Italic
 } from '@expo-google-fonts/lora';
 import { StripeProvider, useStripe } from '@stripe/stripe-react-native';
-
 import { CartWrapper } from './context/cart';
-
 import { NavigationContainer } from '@react-navigation/native';
 import Navigator from './utils/navigator';
 import { Linking } from 'react-native';

@@ -12,9 +12,7 @@ export default function MenuScreen({ navigation }: any) {
             <Hero />
             <Container>
                 <Row>
-
                 <StyledButton buttonTitle='Order' disabled={false} onPress={() => navigation.navigate('Cart')} buttonColor={Colors.dark} />
-            
                 </Row>
             </Container>
         </>
@@ -26,6 +24,8 @@ const Container = styled.View`
     background-color: '#fff';
     align-items: center;
     justify-content: center;
+    padding: 8px 0;
+    margin: 8px 0;
 `
 const Row = styled.View`
     display: flex;
